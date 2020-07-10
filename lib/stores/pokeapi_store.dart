@@ -15,8 +15,14 @@ abstract class _PokeApiStoreBase with Store {
 @observable
 PokeAPI _pokeAPI;
 
+@observable
+Pokemon _pokemonAtual;
+
 @computed
 PokeAPI get pokeAPI => _pokeAPI;
+
+@computed
+Pokemon get pokemonAtual => _pokemonAtual;
 
 @action
 fetchPokemonList(){
@@ -40,6 +46,11 @@ getPokemon({int index}){
       imageUrl: 'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/$numero.png',
     );
   }
+
+@action
+setPokemonAtual({int index}){
+  _pokemonAtual = _pokeAPI.pokemon[index];
+}
 
   Future<PokeAPI> loadPokeAPI() async {
     try{
