@@ -29,7 +29,7 @@ class AppBarHome extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: 'Goole',
                         fontWeight: FontWeight.bold,
-                        fontSize: 28)),
+                        fontSize: 40)),
               ),
             ],
           )

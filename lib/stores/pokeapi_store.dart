@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:FlutterPokedex/consts/consts_api.dart';
+import 'package:FlutterPokedex/consts/consts_app.dart';
 import 'package:FlutterPokedex/models/pokeapi.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,9 @@ PokeAPI _pokeAPI;
 @observable
 Pokemon _pokemonAtual;
 
+@observable
+dynamic corPokemon;
+
 @computed
 PokeAPI get pokeAPI => _pokeAPI;
 
@@ -32,8 +36,7 @@ fetchPokemonList(){
   });
 }
 
-@action
-getPokemon({int index}){
+Pokemon getPokemon({int index}){
   return _pokeAPI.pokemon[index];
 }
 
@@ -50,6 +53,7 @@ getPokemon({int index}){
 @action
 setPokemonAtual({int index}){
   _pokemonAtual = _pokeAPI.pokemon[index];
+  corPokemon = ConstsApp.getColorType(type: _pokemonAtual.type[0]);
 }
 
   Future<PokeAPI> loadPokeAPI() async {
