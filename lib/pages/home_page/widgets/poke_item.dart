@@ -45,8 +45,10 @@ class PokeItem extends StatelessWidget {
     );
   }
 
-  const PokeItem({Key key, this.name, this.index, this.color, this.num, this.types}) : super(key: key);
-  
+  const PokeItem(
+      {Key key, this.name, this.index, this.color, this.num, this.types})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -60,63 +62,68 @@ class PokeItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(left :8.0, top: 8.0),
+                    padding: const EdgeInsets.only(left: 8.0, top: 8.0),
                     child: Text(
                       name,
                       style: TextStyle(
-                        fontFamily: 'Goole',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                      ),
+                          fontFamily: 'Goole',
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left:8.0, top : 40),
+                padding: const EdgeInsets.only(left: 8.0, top: 40),
                 child: setTipos(),
               ),
               Align(
-                  alignment: Alignment.bottomRight,
+                alignment: Alignment.bottomRight,
+                child: Hero(
+                  tag: name + 'rotation',
                   child: Opacity(
-                  opacity: 0.2,
-                  child: Image.asset(
-                    ConstsApp.whitePokeball, 
-                    width: 120,
-                    height: 120,
-                  )
+                      opacity: 0.2,
+                      child: Image.asset(
+                        ConstsApp.whitePokeball,
+                        width: 120,
+                        height: 120,
+                      )),
                 ),
               ),
               Align(
-                  alignment: Alignment.bottomRight,
+                alignment: Alignment.bottomRight,
+                child: Hero(
+                  tag: name,
                   child: CachedNetworkImage(
-                  width: 120,
-                  height: 120,
-                  placeholder: (context, url) => new Container(
-                    color: Colors.transparent,
+                    alignment: Alignment.bottomRight,
+                    width: 120,
+                    height: 120,
+                    placeholder: (context, url) => new Container(
+                      color: Colors.transparent,
+                    ),
+                    imageUrl:
+                        'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/$num.png',
                   ),
-                  imageUrl: 'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/$num.png',
                 ),
               ),
             ],
           ),
         ),
-        
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                ConstsApp.getColorType(type: types[0]).withOpacity(0.7),
-                ConstsApp.getColorType(type: types[0])
-              ],),
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              ConstsApp.getColorType(type: types[0]).withOpacity(0.7),
+              ConstsApp.getColorType(type: types[0])
+            ],
+          ),
           borderRadius: BorderRadius.all(
             Radius.circular(20),
           ),
         ),
       ),
-      
     );
   }
 }

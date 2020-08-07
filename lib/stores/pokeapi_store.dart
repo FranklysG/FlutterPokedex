@@ -22,6 +22,9 @@ Pokemon _pokemonAtual;
 @observable
 dynamic corPokemon;
 
+@observable
+int posicaoAtual;
+
 @computed
 PokeAPI get pokeAPI => _pokeAPI;
 
@@ -54,6 +57,7 @@ Pokemon getPokemon({int index}){
 setPokemonAtual({int index}){
   _pokemonAtual = _pokeAPI.pokemon[index];
   corPokemon = ConstsApp.getColorType(type: _pokemonAtual.type[0]);
+  posicaoAtual = index;
 }
 
   Future<PokeAPI> loadPokeAPI() async {
