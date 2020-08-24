@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           // posicionando as imagens da pokeball
           Positioned(
-            top: -(240 / 4),
+            top: MediaQuery.of(context).padding.top - 240 / 2.8,
             left: screenWidth - (240 / 1.5),
             child: Opacity(
               child: Image.asset(

@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Poekdex',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Google',
+        brightness: Brightness.light,
       ),
       home: HomePage(),
     );
