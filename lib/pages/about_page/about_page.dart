@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
+import 'package:mobx/mobx.dart';
 
 class AboutPage extends StatefulWidget {
   @override
@@ -12,18 +13,34 @@ class AboutPage extends StatefulWidget {
 class _AboutPageState extends State<AboutPage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+  PageController _pageController;
   PokeApiStore _pokemonStore;
+  ReactionDisposer _disposer;
 
   @override
   void initState() {
     super.initState();
-    _pokemonStore = GetIt.instance<PokeApiStore>();
     _tabController = TabController(length: 3, vsync: this);
+    _pokemonStore = GetIt.instance<PokeApiStore>();
+    _pageController = PageController(initialPage: 0);
+
+    _disposer = reaction(
+      (f) => _pokemonStore.pokemonAtual,
+      (r) => _pageController.animateToPage(0,
+          duration: Duration(milliseconds: 300), curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _disposer();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -31,6 +48,11 @@ class _AboutPageState extends State<AboutPage>
           preferredSize: Size.fromHeight(40),
           child: Observer(builder: (context) {
             return TabBar(
+              onTap: (index) {
+                _pageController.animateToPage(index,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut);
+              },
               controller: _tabController,
               labelStyle: TextStyle(
                   //up to your taste
@@ -55,11 +77,23 @@ class _AboutPageState extends State<AboutPage>
                 ),
                 Tab(
                   text: "Status",
-                )
+                ),
               ],
             );
           }),
         ),
+      ),
+      body: PageView(
+        onPageChanged: (index) {
+          _tabController.animateTo(index,
+              duration: Duration(milliseconds: 300));
+        },
+        controller: _pageController,
+        children: <Widget>[
+          // AbaSobre(),
+          // AbaEvolucao(),
+          // AbaStatus(),
+        ],
       ),
     );
   }
