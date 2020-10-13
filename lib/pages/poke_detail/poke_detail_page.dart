@@ -1,5 +1,6 @@
 import 'package:FlutterPokedex/consts/consts_app.dart';
 import 'package:FlutterPokedex/models/pokeapi.dart';
+import 'package:FlutterPokedex/pages/about_page/about.dart';
 import 'package:FlutterPokedex/stores/pokeapi_store.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -59,6 +60,15 @@ class _PokeDetailPageState extends State<PokeDetailPage> {
           Observer(
             builder: (context) {
               return AnimatedContainer(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        _pokemonStore.corPokemon.withOpacity(0.7),
+                        _pokemonStore.corPokemon
+                      ]),
+                ),
                 child: Stack(
                   children: <Widget>[
                     AppBar(
@@ -150,7 +160,7 @@ class _PokeDetailPageState extends State<PokeDetailPage> {
                     ),
                   ],
                 ),
-                color: _pokemonStore.corPokemon,
+                // color: _pokemonStore.corPokemon,
                 duration: Duration(milliseconds: 300),
               );
             },
@@ -159,21 +169,23 @@ class _PokeDetailPageState extends State<PokeDetailPage> {
             listener: (state) {
               setState(() {
                 _progress = state.progress;
-                _multiple = 1 - interval(0.60, 0.87, _progress);
+                _multiple = 1 - interval(0.60, 0.90, _progress);
                 _opacity = _multiple;
-                _opacityTitleAppBar = interval(0.60, 0.87, _progress);
+                _opacityTitleAppBar = interval(0.60, 0.90, _progress);
               });
             },
             elevation: 0,
             cornerRadius: 30,
             snapSpec: const SnapSpec(
               snap: true,
-              snappings: [0.60, 0.87],
+              snappings: [0.60, 0.90],
               positioning: SnapPositioning.relativeToAvailableSpace,
             ),
             builder: (context, state) {
               return Container(
-                height: MediaQuery.of(context).size.height,
+                height: MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).size.height * 0.12,
+                child: AboutPage(),
               );
             },
           ),
