@@ -1,3 +1,4 @@
+import 'package:FlutterPokedex/pages/about_page/widget/about_sobre.dart';
 import 'package:FlutterPokedex/stores/pokeapi_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -90,7 +91,7 @@ class _AboutPageState extends State<AboutPage>
         },
         controller: _pageController,
         children: <Widget>[
-          // AbaSobre(),
+          AbaSobre(),
           // AbaEvolucao(),
           // AbaStatus(),
         ],
