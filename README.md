@@ -1,16 +1,28 @@
-# FlutterPokedex
+### ❓ Pokedex Flutter/MobX
 
-A new Flutter project.
+- App feito com gerência de estado utilizando MobX e com gerência de instancias utilizando a biblioteca GetIt.
+### ⚠️ Features
 
-## Getting Started
+- Listagem de Pokemons
+- Tela de Detalhes do Pokemon (Detalhes, Status, Evoluções)
+## 📱 Current state
 
-This project is a starting point for a Flutter application.
+<p align="left">
+<code>
+<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_1.png" height="400px">
+</code>
+<code>
+<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_3.png" height="400px">
+</code>
+<code>
+<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_4.png" height="400px">
+</code>
+<code>
+<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_5.png" height="400px">
+</code>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📌 Find me!
+<!-- - Linkedin: https://www.linkedin.com/in/FranklysG19/ -->
+- Instagram: https://www.instagram.com/franklysg/
+- Github: https://github.com/FranklysG
