@@ -12,15 +12,15 @@
 <img src="assets/readme/screenshot-01.png" height="400px">
 </code>
 <code>
-<img src="assets/readme/screenshot-03.png" height="400px">
+<img src="assets/readme/screenshot-02.png" height="400px">
 </code>
 <code>
-<img src="assets/readme/screenshot-04.png" height="400px">
+<img src="assets/readme/screenshot-03.png" height="400px">
 </code>
 </p>
 <p align="left">
 <code>
-<img src="assets/readme/screenshot-05.png" height="400px">
+<img src="assets/readme/screenshot-04.png" height="400px">
 </code>
 </p>
 
