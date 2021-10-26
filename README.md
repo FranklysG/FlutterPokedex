@@ -17,6 +17,7 @@
 <code>
 <img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_4.png" height="400px">
 </code>
+<br>
 <code>
 <img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_5.png" height="400px">
 </code>
