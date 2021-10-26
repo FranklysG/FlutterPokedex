@@ -9,17 +9,18 @@
 
 <p align="left">
 <code>
-<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_1.png" height="400px">
+<img src="assets/readme/screenshot-01.png" height="400px">
 </code>
 <code>
-<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_3.png" height="400px">
+<img src="assets/readme/screenshot-03.png" height="400px">
 </code>
 <code>
-<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_4.png" height="400px">
+<img src="assets/readme/screenshot-04.png" height="400px">
 </code>
-<br>
+</p>
+<p align="left">
 <code>
-<img src="https://raw.githubusercontent.com/RenatoLucasMota/PokeDex_MobX/master/Screenshot_5.png" height="400px">
+<img src="assets/readme/screenshot-05.png" height="400px">
 </code>
 </p>
 
